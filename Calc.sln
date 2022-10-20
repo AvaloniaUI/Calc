@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc", "Calc\Calc.csproj", "{2BADC6A0-42BC-4C6D-B97F-62485C051DFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc.Desktop", "Calc.Desktop\Calc.Desktop.csproj", "{A1D52ADE-D1A1-4E48-9212-96DA6F69987C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFiles", "{7B0CD07C-A43F-41CE-9A81-9DC22B8F2578}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+		Directory.Build.props = Directory.Build.props
+		nuget.config = nuget.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc.Browser", "Calc.Browser\Calc.Browser.csproj", "{45063CD8-19B9-4241-9C02-2CD904BED0FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BADC6A0-42BC-4C6D-B97F-62485C051DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BADC6A0-42BC-4C6D-B97F-62485C051DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BADC6A0-42BC-4C6D-B97F-62485C051DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BADC6A0-42BC-4C6D-B97F-62485C051DFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1D52ADE-D1A1-4E48-9212-96DA6F69987C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D52ADE-D1A1-4E48-9212-96DA6F69987C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D52ADE-D1A1-4E48-9212-96DA6F69987C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D52ADE-D1A1-4E48-9212-96DA6F69987C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45063CD8-19B9-4241-9C02-2CD904BED0FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45063CD8-19B9-4241-9C02-2CD904BED0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45063CD8-19B9-4241-9C02-2CD904BED0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45063CD8-19B9-4241-9C02-2CD904BED0FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

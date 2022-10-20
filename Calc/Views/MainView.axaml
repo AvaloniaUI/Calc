@@ -1,26 +1,17 @@
-<Window
-    Height="500"
-    Icon="/Assets/avalonia-logo.ico"
-    Title="Calc"
-    Width="600"
-    d:DesignHeight="450"
-    d:DesignWidth="600"
-    mc:Ignorable="d"
-    x:Class="Calc.Views.MainWindow"
-    xmlns="https://github.com/avaloniaui"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:m="using:Calc.Models"
-    xmlns:material="using:Material.Icons.Avalonia"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:system="clr-namespace:System;assembly=System.Runtime"
-    xmlns:vm="using:Calc.ViewModels"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-    <Design.DataContext>
-        <vm:MainWindowViewModel />
-    </Design.DataContext>
-
-    <Window.Styles>
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:material="using:Material.Icons.Avalonia"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             xmlns:viewModels="clr-namespace:Calc.ViewModels"
+             Width="600" Height="500" HorizontalAlignment="Center" VerticalAlignment="Center"
+             xmlns:m="using:Calc.Models"
+             mc:Ignorable="d" 
+             x:Class="Calc.Views.MainView"
+             x:DataType="viewModels:MainWindowViewModel"
+             x:CompileBindings="True">
+    <UserControl.Styles>
         <Style Selector="Button">
             <Setter Property="Margin" Value="5" />
         </Style>
@@ -33,10 +24,10 @@
             <Setter Property="FontSize" Value="30" />
             <Setter Property="MinHeight" Value="35" />
             <Setter Property="TextAlignment" Value="Right" />
+            <Setter Property="Foreground" Value="#ddffffff" />
         </Style>
-    </Window.Styles>
-
-    <Window.KeyBindings>
+    </UserControl.Styles>
+    <UserControl.KeyBindings>
         <!--  0  -->
         <KeyBinding Command="{Binding AddNumberCommand}" Gesture="D0">
             <KeyBinding.CommandParameter>
@@ -201,8 +192,7 @@
         <KeyBinding Command="{Binding AddParenthesisCommand}" Gesture="OemCloseBrackets" />
         <!--  =  -->
         <KeyBinding Command="{Binding PickResultCommand}" Gesture="Enter" />
-    </Window.KeyBindings>
-
+    </UserControl.KeyBindings>
     <Grid Margin="5" RowDefinitions="Auto, Auto, *">
         <!--  Screens  -->
         <TextBlock
@@ -384,5 +374,4 @@
             </Button>
         </Grid>
     </Grid>
-
-</Window>
+</UserControl>

@@ -1,0 +1,18 @@
+<Project>
+  <PropertyGroup>
+    <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AvaloniaVersion>11.0.999-cibuild0025075-beta</AvaloniaVersion>
+    <MaterialAvaloniaVersion>3.0.0-avalonia11-preview2</MaterialAvaloniaVersion>
+    <AvaloniaBehaviorsVersion>11.0.0-preview1</AvaloniaBehaviorsVersion>
+    <AvaloniaEditVersion>11.0.999-cibuild0024568-beta</AvaloniaEditVersion>
+    <AvaloniaEditTextMateGrammarsVersion>0.10.12</AvaloniaEditTextMateGrammarsVersion>
+    <OctokitVersion>2.0.1</OctokitVersion>
+    <CommunityToolkitMvvmVersion>8.0.0</CommunityToolkitMvvmVersion>
+    <ReactiveMarblesPropertyChangedVersion>2.0.27</ReactiveMarblesPropertyChangedVersion>
+    <MicrosoftCodeAnalysisVersion>4.4.0-1.final</MicrosoftCodeAnalysisVersion>
+  </PropertyGroup>
+</Project>
