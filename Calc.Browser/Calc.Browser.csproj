@@ -17,7 +17,6 @@
     <TrimMode>full</TrimMode>
     <WasmBuildNative>true</WasmBuildNative>
     <InvariantGlobalization>true</InvariantGlobalization>
-    <WasmEnableSIMD>true</WasmEnableSIMD>
     <EmccCompileOptimizationFlag>-O3</EmccCompileOptimizationFlag>
     <EmccLinkOptimizationFlag>-O3</EmccLinkOptimizationFlag>
   </PropertyGroup>
@@ -32,6 +31,7 @@
     <WasmExtraFilesToDeploy Include="AppBundle\index.html" />
     <WasmExtraFilesToDeploy Include="AppBundle\Logo.svg" />
     <WasmExtraFilesToDeploy Include="AppBundle\main.js" />
+    <WasmExtraFilesToDeploy Include="AppBundle\staticwebapp.config.json" />
   </ItemGroup>
 
   <ItemGroup>
