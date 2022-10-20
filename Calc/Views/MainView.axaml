@@ -5,7 +5,7 @@
              xmlns:material="using:Material.Icons.Avalonia"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              xmlns:viewModels="clr-namespace:Calc.ViewModels"
-             Width="600" Height="500" HorizontalAlignment="Center" VerticalAlignment="Center"
+             MaxWidth="800" MaxHeight="500" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
              xmlns:m="using:Calc.Models"
              mc:Ignorable="d" 
              x:Class="Calc.Views.MainView"
