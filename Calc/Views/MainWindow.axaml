@@ -1,6 +1,5 @@
 <Window
     Height="500"
-    Icon="/Assets/avalonia-logo.ico"
     Title="Calc"
     Width="600"
     d:DesignHeight="450"
