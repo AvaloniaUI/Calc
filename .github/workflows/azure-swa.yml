@@ -41,6 +41,12 @@ jobs:
       - name: Brotli Compress Output (bin)
         run: DotNetCompress -d Calc.Browser/bin/Release/net7.0/browser-wasm/AppBundle/ -p '*.bin'
 
+      - name: Brotli Compress Output (symbols)
+        run: DotNetCompress -d Calc.Browser/bin/Release/net7.0/browser-wasm/AppBundle/supportFiles -p '*.symbols'
+
+      - name: Brotli Compress Output (bin)
+        run: DotNetCompress -d Calc.Browser/bin/Release/net7.0/browser-wasm/AppBundle/supportFiles -p '*.bin'
+
       - name: Brotli Compress Output (wasm)
         run: DotNetCompress -d Calc.Browser/bin/Release/net7.0/browser-wasm/AppBundle/ -p '*.wasm'
         
