@@ -7,7 +7,7 @@ using ReactiveUI;
 
 namespace Calc.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    public sealed class MainWindowViewModel : ReactiveObject
     {
         private string _shownString = string.Empty;
         private string _shownResult = string.Empty;
