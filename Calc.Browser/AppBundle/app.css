@@ -59,7 +59,7 @@
 }
 
 .splash-close {
-    animation: fadeout 0.5s linear 1s forwards;
+    animation: fadeout 0.25s linear forwards;
 }
 
 @keyframes fadeout {
