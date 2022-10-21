@@ -18,6 +18,10 @@
     <InvariantGlobalization>true</InvariantGlobalization>
     <EmccCompileOptimizationFlag>-O3</EmccCompileOptimizationFlag>
     <EmccLinkOptimizationFlag>-O3</EmccLinkOptimizationFlag>
+    <WasmEmitSymbolMap>false</WasmEmitSymbolMap>
+    <WasmNativeDebugSymbols>false</WasmNativeDebugSymbols>
+    <WasmDebugLevel>0</WasmDebugLevel>
+    <WasmEnableExceptionHandling>false</WasmEnableExceptionHandling>
   </PropertyGroup>
 
   <ItemGroup>
