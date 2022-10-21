@@ -60,6 +60,57 @@ namespace Calc.ViewModels
             Calculate(ShownString);
         }
 
+        internal void ProcessText(string text)
+        {
+            if (text.Length == 1)
+            {
+                switch (text)
+                {
+                    case "+":
+                        AddOperator(Operator.Add);
+                        break;
+                    
+                    case "-":
+                        AddOperator(Operator.Subtract);
+                        break;
+
+                    case "*":
+                        AddOperator(Operator.Multiply);
+                        break;
+                    
+                    case "/":
+                        AddOperator(Operator.Divide);
+                        break;
+                    
+                    case "=":
+                        PickResult();
+                        break;
+                    
+                    case ".":
+                        AddDecimalSeparator();
+                        break;
+                    
+                    case "(":
+                    case ")":
+                        AddParenthesis();
+                        break;
+                    
+                    case "1":
+                    case "2":
+                    case "3":
+                    case "4":
+                    case "5":
+                    case "6":
+                    case "7":
+                    case "8":
+                    case "9":
+                    case "0":
+                        AddNumber(int.Parse(text));
+                        break;
+                }
+            }
+        }
+
         private void AddOperator(Operator @operator)
         {
             if (ShownString[^1].Equals('('))
