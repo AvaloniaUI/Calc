@@ -1,5 +1,3 @@
-using System.Linq;
-
 namespace Calc.Models;
 
 public static class OperatorChar
@@ -15,6 +13,14 @@ public static class OperatorChar
 
     public static bool IsAnOperator(char character)
     {
-        return Operators.Contains(character);
+        foreach (var c in Operators)
+        {
+            if (c == character)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
