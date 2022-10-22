@@ -5,7 +5,6 @@
              xmlns:material="using:Material.Icons.Avalonia"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              xmlns:viewModels="clr-namespace:Calc.ViewModels"
-             MaxWidth="800" MaxHeight="500" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
              xmlns:m="using:Calc.Models"
              xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
              xmlns:naming="clr-namespace:Material.Styles.Resources.Naming;assembly=Material.Styles"
@@ -326,7 +325,7 @@
         <!--  =  -->
         <KeyBinding Command="{Binding PickResultCommand}" Gesture="Enter" />
     </UserControl.KeyBindings>
-    <Grid Margin="5" RowDefinitions="Auto, Auto, *">
+    <Grid Margin="5" RowDefinitions="Auto, Auto, *" MaxWidth="800" MaxHeight="500" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <!--  Screens  -->
         <TextBlock
             Classes="screen"
