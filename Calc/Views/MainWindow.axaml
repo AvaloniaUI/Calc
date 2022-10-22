@@ -13,7 +13,7 @@
     xmlns:views="clr-namespace:Calc.Views" Focusable="False"
     ExtendClientAreaToDecorationsHint="True" ExtendClientAreaChromeHints="PreferSystemChrome">
     <DockPanel>
-        <Panel Height="40" IsHitTestVisible="False" HorizontalAlignment="Stretch" DockPanel.Dock="Top" Background="Black" />
+        <Panel Height="40" IsHitTestVisible="False" HorizontalAlignment="Stretch" DockPanel.Dock="Top" Background="{DynamicResource MaterialDesignPaper}" />
         <views:MainView Focusable="True" />
     </DockPanel>
 </Window>

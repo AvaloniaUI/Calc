@@ -11,7 +11,7 @@
              mc:Ignorable="d" 
              x:Class="Calc.Views.MainView"
              x:DataType="viewModels:MainWindowViewModel"
-             x:CompileBindings="True">
+             x:CompileBindings="True" Background="{DynamicResource MaterialDesignPaper}">
     <UserControl.Styles>
             <Style Selector="Button" >
         <Setter Property="CornerRadius" Value="4" />
