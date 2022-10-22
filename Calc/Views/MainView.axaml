@@ -2,7 +2,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:material="using:Material.Icons.Avalonia"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              xmlns:viewModels="clr-namespace:Calc.ViewModels"
              Width="600" Height="500" HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -310,19 +309,19 @@
                 Command="{Binding AlternateNegativePositiveCommand}"
                 Grid.Column="2"
                 Grid.Row="3">
-                +/-
+                &#177;
             </Button>
             <Button
                 Command="{Binding DeleteLastCommand}"
                 Grid.Column="3"
                 Grid.Row="0">
-                <material:MaterialIcon Kind="Backspace" />
+                &#9003;
             </Button>
             <Button
                 Command="{Binding ClearScreenCommand}"
                 Grid.Column="4"
                 Grid.Row="0">
-                <material:MaterialIcon Kind="DeleteForever" />
+                AC
             </Button>
             <Button
                 Command="{Binding AddOperatorCommand}"
@@ -331,7 +330,7 @@
                 <Button.CommandParameter>
                     <m:Operator>Multiply</m:Operator>
                 </Button.CommandParameter>
-                <material:MaterialIcon Kind="Multiply" />
+                &#215;
             </Button>
             <Button
                 Command="{Binding AddOperatorCommand}"
@@ -340,7 +339,7 @@
                 <Button.CommandParameter>
                     <m:Operator>Divide</m:Operator>
                 </Button.CommandParameter>
-                <material:MaterialIcon Kind="Division" />
+                &#247;
             </Button>
             <Button
                 Command="{Binding AddOperatorCommand}"
@@ -349,7 +348,7 @@
                 <Button.CommandParameter>
                     <m:Operator>Add</m:Operator>
                 </Button.CommandParameter>
-                <material:MaterialIcon Kind="Add" />
+                +
             </Button>
             <Button
                 Command="{Binding AddOperatorCommand}"
@@ -358,19 +357,19 @@
                 <Button.CommandParameter>
                     <m:Operator>Subtract</m:Operator>
                 </Button.CommandParameter>
-                <material:MaterialIcon Kind="Minus" />
+                -
             </Button>
             <Button
                 Command="{Binding AddParenthesisCommand}"
                 Grid.Column="3"
                 Grid.Row="3">
-                <material:MaterialIcon Kind="CodeParentheses" />
+                ( )
             </Button>
             <Button
                 Command="{Binding PickResultCommand}"
                 Grid.Column="4"
                 Grid.Row="3">
-                <material:MaterialIcon Kind="Equal" />
+                =
             </Button>
         </Grid>
     </Grid>
