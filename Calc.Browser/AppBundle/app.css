@@ -23,15 +23,6 @@
     pointer-events: none;
 }
 
-#out {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100vh;
-    overflow:hidden;
-}
-
 #avalonia-splash a{
     color: whitesmoke;
     text-decoration: none;
@@ -59,7 +50,7 @@
 }
 
 .splash-close {
-    animation: fadeout 0.5s linear 1s forwards;
+    animation: fadeout 0.25s linear forwards;
 }
 
 @keyframes fadeout {

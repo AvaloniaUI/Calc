@@ -8,8 +8,6 @@
   <!-- Avalonia Themes -->
 
   <assembly fullname="Material.Avalonia" preserve="All" />
-  <assembly fullname="Material.DataGrid" preserve="All" />
-  <assembly fullname="Material.Dialog" preserve="All" />
   <assembly fullname="Material.Styles" preserve="All" />
   <assembly fullname="Material.Colors" preserve="All" />
   <assembly fullname="Material.Ripple" preserve="All" />

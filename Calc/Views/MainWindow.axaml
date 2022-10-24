@@ -1,6 +1,5 @@
 <Window
     Height="500"
-    Icon="/Assets/avalonia-logo.ico"
     Title="Calc"
     Width="600"
     d:DesignHeight="450"
@@ -11,6 +10,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:views="clr-namespace:Calc.Views" Focusable="False">
-    <views:MainView Focusable="True" />
+    xmlns:views="clr-namespace:Calc.Views" Focusable="False"
+    ExtendClientAreaToDecorationsHint="True" ExtendClientAreaChromeHints="PreferSystemChrome">
+    <DockPanel>
+        <Panel Height="40" IsHitTestVisible="False" HorizontalAlignment="Stretch" DockPanel.Dock="Top" Background="{DynamicResource MaterialDesignPaper}" />
+        <views:MainView Focusable="True" />
+    </DockPanel>
 </Window>

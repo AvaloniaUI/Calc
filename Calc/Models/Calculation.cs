@@ -2,7 +2,7 @@ using System.IO;
 
 namespace Calc.Models;
 
-public class Calculation
+public sealed class Calculation
 {
     private readonly double _firstValue;
     private readonly double _secondValue;

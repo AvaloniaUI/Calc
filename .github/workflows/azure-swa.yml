@@ -21,19 +21,13 @@ jobs:
         run: dotnet workload install wasm-tools wasm-experimental
 
       - name: Install DotNetCompress
-        run: dotnet tool install --global DotNetCompress --version 1.0.0-preview.4 --no-cache
+        run: dotnet tool install --global DotNetCompress --version 1.0.0-preview.7 --no-cache
 
       - name: Publish .NET Project
         run: dotnet publish Calc.Browser/Calc.Browser.csproj -c Release -o release --nologo
 
       - name: Brotli Compress Output (dll)
-        run: DotNetCompress -d Calc.Browser/bin/Release/net7.0/browser-wasm/AppBundle/managed -p '*.dll'
-
-      - name: Brotli Compress Output (js)
-        run: DotNetCompress -d Calc.Browser/bin/Release/net7.0/browser-wasm/AppBundle/ -p '*.js'
-
-      - name: Brotli Compress Output (wasm)
-        run: DotNetCompress -d Calc.Browser/bin/Release/net7.0/browser-wasm/AppBundle/ -p '*.wasm'
+        run: DotNetCompress -d Calc.Browser/bin/Release/net7.0/browser-wasm/AppBundle/ -p '*.dll' -p '*.js' -p '*.symbols' -p '*.blat' -p '*.bin' -p '*.wasm'
         
       - name: Build And Deploy
         id: builddeploy

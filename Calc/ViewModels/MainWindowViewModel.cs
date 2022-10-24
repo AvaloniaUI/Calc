@@ -2,50 +2,43 @@
 using System.Globalization;
 using System.IO;
 using System.Reactive;
+using System.Windows.Input;
 using Calc.Models;
-using ReactiveUI;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace Calc.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    public sealed partial class MainWindowViewModel : ObservableObject
     {
+        [ObservableProperty]
         private string _shownString = string.Empty;
+        
+        [ObservableProperty]
         private string _shownResult = string.Empty;
         private int _numberOfOpeningParentheses;
         private int _numberOfClosingParentheses;
         
         // Commands
-        public ReactiveCommand<Unit, Unit> AddDecimalSeparatorCommand { get; }
-        public ReactiveCommand<int, Unit> AddNumberCommand { get; }
-        public ReactiveCommand<Operator, Unit> AddOperatorCommand { get; }
-        public ReactiveCommand<Unit, Unit> AddParenthesisCommand { get; }
-        public ReactiveCommand<Unit, Unit> AlternateNegativePositiveCommand { get; }
-        public ReactiveCommand<Unit, Unit> ClearScreenCommand { get; }
-        public ReactiveCommand<Unit, Unit> DeleteLastCommand { get; }
-        public ReactiveCommand<Unit, Unit> PickResultCommand { get; }
+        public ICommand AddDecimalSeparatorCommand { get; }
+        public ICommand AddNumberCommand { get; }
+        public ICommand AddOperatorCommand { get; }
+        public ICommand AddParenthesisCommand { get; }
+        public ICommand AlternateNegativePositiveCommand { get; }
+        public ICommand ClearScreenCommand { get; }
+        public ICommand DeleteLastCommand { get; }
+        public ICommand PickResultCommand { get; }
 
         public MainWindowViewModel()
         {
-            AddDecimalSeparatorCommand = ReactiveCommand.Create(AddDecimalSeparator);
-            AddNumberCommand = ReactiveCommand.Create<int>(AddNumber);
-            AddOperatorCommand = ReactiveCommand.Create<Operator>(AddOperator);
-            AddParenthesisCommand = ReactiveCommand.Create(AddParenthesis);
-            AlternateNegativePositiveCommand = ReactiveCommand.Create(AlternateNegativePositive);
-            ClearScreenCommand = ReactiveCommand.Create(ClearScreen);
-            DeleteLastCommand = ReactiveCommand.Create(DeleteLast);
-            PickResultCommand = ReactiveCommand.Create(PickResult);
-        }
-
-        public string ShownString
-        {
-            get => _shownString;
-            set => this.RaiseAndSetIfChanged(ref _shownString, value);
-        }
-
-        public string ShownResult
-        {
-            get => _shownResult;
-            set => this.RaiseAndSetIfChanged(ref _shownResult, value);
+            AddDecimalSeparatorCommand = new RelayCommand(AddDecimalSeparator);
+            AddNumberCommand = new RelayCommand<int>(AddNumber);
+            AddOperatorCommand = new RelayCommand<Operator>(AddOperator);
+            AddParenthesisCommand = new RelayCommand(AddParenthesis);
+            AlternateNegativePositiveCommand = new RelayCommand(AlternateNegativePositive);
+            ClearScreenCommand = new RelayCommand(ClearScreen);
+            DeleteLastCommand = new RelayCommand(DeleteLast);
+            PickResultCommand = new RelayCommand(PickResult);
         }
 
         private void AddDecimalSeparator()
@@ -58,6 +51,57 @@ namespace Calc.ViewModels
         {
             ShownString += value;
             Calculate(ShownString);
+        }
+
+        internal void ProcessText(string text)
+        {
+            if (text.Length == 1)
+            {
+                switch (text)
+                {
+                    case "+":
+                        AddOperator(Operator.Add);
+                        break;
+                    
+                    case "-":
+                        AddOperator(Operator.Subtract);
+                        break;
+
+                    case "*":
+                        AddOperator(Operator.Multiply);
+                        break;
+                    
+                    case "/":
+                        AddOperator(Operator.Divide);
+                        break;
+                    
+                    case "=":
+                        PickResult();
+                        break;
+                    
+                    case ".":
+                        AddDecimalSeparator();
+                        break;
+                    
+                    case "(":
+                    case ")":
+                        AddParenthesis();
+                        break;
+                    
+                    case "1":
+                    case "2":
+                    case "3":
+                    case "4":
+                    case "5":
+                    case "6":
+                    case "7":
+                    case "8":
+                    case "9":
+                    case "0":
+                        AddNumber(int.Parse(text));
+                        break;
+                }
+            }
         }
 
         private void AddOperator(Operator @operator)
