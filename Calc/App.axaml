@@ -8,6 +8,5 @@
             BaseTheme="Dark"
             PrimaryColor="DeepPurple"
             SecondaryColor="Lime" />
-        <StyleInclude Source="avares://Material.Icons.Avalonia/App.xaml" />
     </Application.Styles>
 </Application>

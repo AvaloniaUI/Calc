@@ -11,6 +11,5 @@
   <assembly fullname="Material.Styles" preserve="All" />
   <assembly fullname="Material.Colors" preserve="All" />
   <assembly fullname="Material.Ripple" preserve="All" />
-  <assembly fullname="Material.Icons.Avalonia" preserve="All" />
 
 </linker>
