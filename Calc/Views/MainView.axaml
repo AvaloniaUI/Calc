@@ -310,7 +310,7 @@
         </Panel>
 
         <Panel Classes="splashContent">
-            <Panel Background="#171C2C" />
+            <Panel Background="Black" />
             <Image Source="{StaticResource Avalonia}" MinWidth="24" MinHeight="24" MaxHeight="128" MaxWidth="128">
                 <Image.RenderTransform>
                     <TransformGroup>
