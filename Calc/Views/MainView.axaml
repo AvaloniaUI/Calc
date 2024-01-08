@@ -10,6 +10,86 @@
              x:DataType="viewModels:MainWindowViewModel"
              x:CompileBindings="True" Background="{DynamicResource MaterialDesignPaper}">
     <UserControl.Styles>
+        <Style>
+            <Style.Resources>
+                <DrawingImage x:Key="Avalonia">
+                    <DrawingGroup>
+                        <GeometryDrawing Brush="White"
+                                         Geometry="M43 14.6a28.3 28.3 0 0 0-27.6 22.1 6.4 6.4 0 0 1 0 12.4 28.3 28.3 0 0 0 41.2 18.6V71h14.7V42.9a28.3 28.3 0 0 0-28.2-28.3ZM29.6 43a13.5 13.5 0 1 1 27.1 0 13.5 13.5 0 0 1-27 0Z" />
+                        <GeometryDrawing Brush="White"
+                                         Geometry="M18.1 42.9a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Z" />
+                    </DrawingGroup>
+                </DrawingImage>
+            </Style.Resources>
+        </Style>
+        <Style Selector="Panel.splashContent">
+            <Style.Animations>
+                <Animation Delay="0:0:0" Duration="0:0:2" Easing="QuadraticEaseInOut" FillMode="Both">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="IsVisible" Value="True" />
+                        <Setter Property="Opacity" Value="0" />
+                    </KeyFrame>
+                    <KeyFrame Cue="20%">
+                        <Setter Property="Opacity" Value="1" />
+                    </KeyFrame>
+                    <KeyFrame Cue="80%">
+                        <Setter Property="Opacity" Value="1" />
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="Opacity" Value="0" />
+                        <Setter Property="IsVisible" Value="False" />
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
+        <Style Selector="Panel.splashContent Image">
+            <Style.Animations>
+                <Animation Delay="0:0:0" Duration="0:0:2" Easing="QuadraticEaseInOut" FillMode="Both">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="(ScaleTransform.ScaleX)" Value="0.7" />
+                        <Setter Property="(ScaleTransform.ScaleY)" Value="0.7" />
+                    </KeyFrame>
+                    <KeyFrame Cue="20%">
+                        <Setter Property="(ScaleTransform.ScaleX)" Value="1" />
+                        <Setter Property="(ScaleTransform.ScaleY)" Value="1" />
+                    </KeyFrame>
+                    <KeyFrame Cue="80%">
+                        <Setter Property="(ScaleTransform.ScaleX)" Value="1" />
+                        <Setter Property="(ScaleTransform.ScaleY)" Value="1" />
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="(ScaleTransform.ScaleX)" Value="1.5" />
+                        <Setter Property="(ScaleTransform.ScaleY)" Value="1.5" />
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
+        <Style Selector="Panel.mainContent">
+            <Style.Animations>
+                <Animation Delay="0:0:2" Duration="0:0:1" Easing="QuadraticEaseInOut" FillMode="Both">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="(ScaleTransform.ScaleX)" Value="0.7" />
+                        <Setter Property="(ScaleTransform.ScaleY)" Value="0.7" />
+                        <Setter Property="Opacity" Value="0" />
+                    </KeyFrame>
+                    <KeyFrame Cue="20%">
+                        <Setter Property="(ScaleTransform.ScaleX)" Value="1" />
+                        <Setter Property="(ScaleTransform.ScaleY)" Value="1" />
+                        <Setter Property="Opacity" Value="1" />
+                    </KeyFrame>
+                    <KeyFrame Cue="80%">
+                        <Setter Property="(ScaleTransform.ScaleX)" Value="1" />
+                        <Setter Property="(ScaleTransform.ScaleY)" Value="1" />
+                        <Setter Property="Opacity" Value="1" />
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="Opacity" Value="1" />
+                        <Setter Property="(ScaleTransform.ScaleX)" Value="1" />
+                        <Setter Property="(ScaleTransform.ScaleY)" Value="1" />
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
         <Style Selector="Button">
             <Setter Property="Margin" Value="5" />
         </Style>
@@ -37,185 +117,208 @@
         <!--  =  -->
         <KeyBinding Command="{Binding PickResultCommand}" Gesture="Enter" />
     </UserControl.KeyBindings>
-    <Grid Margin="5" RowDefinitions="Auto, Auto, *" MaxWidth="800" MaxHeight="500" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <!--  Screens  -->
-        <TextBlock
-            Classes="screen"
-            Grid.Row="0"
-            Text="{Binding ShownString}" />
-        <TextBlock
-            Classes="screen"
-            Grid.Row="1"
-            Text="{Binding ShownResult}" />
-        <!--  Keys  -->
-        <Grid
-            ColumnDefinitions="*,*,*,*,*"
-            Grid.Row="2"
-            RowDefinitions="*,*,*,*">
-            <!--  Numeric keys  -->
-            <Button
-                Command="{Binding AddNumberCommand}"
-                Grid.Column="0"
-                Grid.Row="3">
-                <Button.CommandParameter>
-                    <system:Int32>0</system:Int32>
-                </Button.CommandParameter>
-                0
-            </Button>
-            <Button
-                Command="{Binding AddNumberCommand}"
-                Grid.Column="0"
-                Grid.Row="2">
-                <Button.CommandParameter>
-                    <system:Int32>1</system:Int32>
-                </Button.CommandParameter>
-                1
-            </Button>
-            <Button
-                Command="{Binding AddNumberCommand}"
-                Grid.Column="1"
-                Grid.Row="2">
-                <Button.CommandParameter>
-                    <system:Int32>2</system:Int32>
-                </Button.CommandParameter>
-                2
-            </Button>
-            <Button
-                Command="{Binding AddNumberCommand}"
-                Grid.Column="2"
-                Grid.Row="2">
-                <Button.CommandParameter>
-                    <system:Int32>3</system:Int32>
-                </Button.CommandParameter>
-                3
-            </Button>
-            <Button
-                Command="{Binding AddNumberCommand}"
-                Grid.Column="0"
-                Grid.Row="1">
-                <Button.CommandParameter>
-                    <system:Int32>4</system:Int32>
-                </Button.CommandParameter>
-                4
-            </Button>
-            <Button
-                Command="{Binding AddNumberCommand}"
-                Grid.Column="1"
-                Grid.Row="1">
-                <Button.CommandParameter>
-                    <system:Int32>5</system:Int32>
-                </Button.CommandParameter>
-                5
-            </Button>
-            <Button
-                Command="{Binding AddNumberCommand}"
-                Grid.Column="2"
-                Grid.Row="1">
-                <Button.CommandParameter>
-                    <system:Int32>6</system:Int32>
-                </Button.CommandParameter>
-                6
-            </Button>
-            <Button
-                Command="{Binding AddNumberCommand}"
-                Grid.Column="0"
-                Grid.Row="0">
-                <Button.CommandParameter>
-                    <system:Int32>7</system:Int32>
-                </Button.CommandParameter>
-                7
-            </Button>
-            <Button
-                Command="{Binding AddNumberCommand}"
-                Grid.Column="1"
-                Grid.Row="0">
-                <Button.CommandParameter>
-                    <system:Int32>8</system:Int32>
-                </Button.CommandParameter>
-                8
-            </Button>
-            <Button
-                Command="{Binding AddNumberCommand}"
-                Grid.Column="2"
-                Grid.Row="0">
-                <Button.CommandParameter>
-                    <system:Int32>9</system:Int32>
-                </Button.CommandParameter>
-                9
-            </Button>
-            <!--  Non-numeric keys  -->
-            <Button
-                Command="{Binding AddDecimalSeparatorCommand}"
-                Grid.Column="1"
-                Grid.Row="3">
-                .
-            </Button>
-            <Button
-                Command="{Binding AlternateNegativePositiveCommand}"
-                Grid.Column="2"
-                Grid.Row="3">
-                &#177;
-            </Button>
-            <Button
-                Command="{Binding DeleteLastCommand}"
-                Grid.Column="3"
-                Grid.Row="0">
-                &#9003;
-            </Button>
-            <Button
-                Command="{Binding ClearScreenCommand}"
-                Grid.Column="4"
-                Grid.Row="0">
-                AC
-            </Button>
-            <Button
-                Command="{Binding AddOperatorCommand}"
-                Grid.Column="3"
-                Grid.Row="1">
-                <Button.CommandParameter>
-                    <m:Operator>Multiply</m:Operator>
-                </Button.CommandParameter>
-                &#215;
-            </Button>
-            <Button
-                Command="{Binding AddOperatorCommand}"
-                Grid.Column="4"
-                Grid.Row="1">
-                <Button.CommandParameter>
-                    <m:Operator>Divide</m:Operator>
-                </Button.CommandParameter>
-                &#247;
-            </Button>
-            <Button
-                Command="{Binding AddOperatorCommand}"
-                Grid.Column="3"
-                Grid.Row="2">
-                <Button.CommandParameter>
-                    <m:Operator>Add</m:Operator>
-                </Button.CommandParameter>
-                +
-            </Button>
-            <Button
-                Command="{Binding AddOperatorCommand}"
-                Grid.Column="4"
-                Grid.Row="2">
-                <Button.CommandParameter>
-                    <m:Operator>Subtract</m:Operator>
-                </Button.CommandParameter>
-                -
-            </Button>
-            <Button
-                Command="{Binding AddParenthesisCommand}"
-                Grid.Column="3"
-                Grid.Row="3">
-                ( )
-            </Button>
-            <Button
-                Command="{Binding PickResultCommand}"
-                Grid.Column="4"
-                Grid.Row="3">
-                =
-            </Button>
-        </Grid>
-    </Grid>
+    <Panel>
+        <Panel Classes="mainContent">
+            <Panel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <TranslateTransform />
+                </TransformGroup>
+            </Panel.RenderTransform>
+            <Grid Margin="5" RowDefinitions="Auto, Auto, *" MaxWidth="800" MaxHeight="500"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <!--  Screens  -->
+                <TextBlock
+                    Classes="screen"
+                    Grid.Row="0"
+                    Text="{Binding ShownString}" />
+                <TextBlock
+                    Classes="screen"
+                    Grid.Row="1"
+                    Text="{Binding ShownResult}" />
+                <!--  Keys  -->
+                <Grid
+                    ColumnDefinitions="*,*,*,*,*"
+                    Grid.Row="2"
+                    RowDefinitions="*,*,*,*">
+                    <!--  Numeric keys  -->
+                    <Button
+                        Command="{Binding AddNumberCommand}"
+                        Grid.Column="0"
+                        Grid.Row="3">
+                        <Button.CommandParameter>
+                            <system:Int32>0</system:Int32>
+                        </Button.CommandParameter>
+                        0
+                    </Button>
+                    <Button
+                        Command="{Binding AddNumberCommand}"
+                        Grid.Column="0"
+                        Grid.Row="2">
+                        <Button.CommandParameter>
+                            <system:Int32>1</system:Int32>
+                        </Button.CommandParameter>
+                        1
+                    </Button>
+                    <Button
+                        Command="{Binding AddNumberCommand}"
+                        Grid.Column="1"
+                        Grid.Row="2">
+                        <Button.CommandParameter>
+                            <system:Int32>2</system:Int32>
+                        </Button.CommandParameter>
+                        2
+                    </Button>
+                    <Button
+                        Command="{Binding AddNumberCommand}"
+                        Grid.Column="2"
+                        Grid.Row="2">
+                        <Button.CommandParameter>
+                            <system:Int32>3</system:Int32>
+                        </Button.CommandParameter>
+                        3
+                    </Button>
+                    <Button
+                        Command="{Binding AddNumberCommand}"
+                        Grid.Column="0"
+                        Grid.Row="1">
+                        <Button.CommandParameter>
+                            <system:Int32>4</system:Int32>
+                        </Button.CommandParameter>
+                        4
+                    </Button>
+                    <Button
+                        Command="{Binding AddNumberCommand}"
+                        Grid.Column="1"
+                        Grid.Row="1">
+                        <Button.CommandParameter>
+                            <system:Int32>5</system:Int32>
+                        </Button.CommandParameter>
+                        5
+                    </Button>
+                    <Button
+                        Command="{Binding AddNumberCommand}"
+                        Grid.Column="2"
+                        Grid.Row="1">
+                        <Button.CommandParameter>
+                            <system:Int32>6</system:Int32>
+                        </Button.CommandParameter>
+                        6
+                    </Button>
+                    <Button
+                        Command="{Binding AddNumberCommand}"
+                        Grid.Column="0"
+                        Grid.Row="0">
+                        <Button.CommandParameter>
+                            <system:Int32>7</system:Int32>
+                        </Button.CommandParameter>
+                        7
+                    </Button>
+                    <Button
+                        Command="{Binding AddNumberCommand}"
+                        Grid.Column="1"
+                        Grid.Row="0">
+                        <Button.CommandParameter>
+                            <system:Int32>8</system:Int32>
+                        </Button.CommandParameter>
+                        8
+                    </Button>
+                    <Button
+                        Command="{Binding AddNumberCommand}"
+                        Grid.Column="2"
+                        Grid.Row="0">
+                        <Button.CommandParameter>
+                            <system:Int32>9</system:Int32>
+                        </Button.CommandParameter>
+                        9
+                    </Button>
+                    <!--  Non-numeric keys  -->
+                    <Button
+                        Command="{Binding AddDecimalSeparatorCommand}"
+                        Grid.Column="1"
+                        Grid.Row="3">
+                        .
+                    </Button>
+                    <Button
+                        Command="{Binding AlternateNegativePositiveCommand}"
+                        Grid.Column="2"
+                        Grid.Row="3">
+                        &#177;
+                    </Button>
+                    <Button
+                        Command="{Binding DeleteLastCommand}"
+                        Grid.Column="3"
+                        Grid.Row="0">
+                        &#9003;
+                    </Button>
+                    <Button
+                        Command="{Binding ClearScreenCommand}"
+                        Grid.Column="4"
+                        Grid.Row="0">
+                        AC
+                    </Button>
+                    <Button
+                        Command="{Binding AddOperatorCommand}"
+                        Grid.Column="3"
+                        Grid.Row="1">
+                        <Button.CommandParameter>
+                            <m:Operator>Multiply</m:Operator>
+                        </Button.CommandParameter>
+                        &#215;
+                    </Button>
+                    <Button
+                        Command="{Binding AddOperatorCommand}"
+                        Grid.Column="4"
+                        Grid.Row="1">
+                        <Button.CommandParameter>
+                            <m:Operator>Divide</m:Operator>
+                        </Button.CommandParameter>
+                        &#247;
+                    </Button>
+                    <Button
+                        Command="{Binding AddOperatorCommand}"
+                        Grid.Column="3"
+                        Grid.Row="2">
+                        <Button.CommandParameter>
+                            <m:Operator>Add</m:Operator>
+                        </Button.CommandParameter>
+                        +
+                    </Button>
+                    <Button
+                        Command="{Binding AddOperatorCommand}"
+                        Grid.Column="4"
+                        Grid.Row="2">
+                        <Button.CommandParameter>
+                            <m:Operator>Subtract</m:Operator>
+                        </Button.CommandParameter>
+                        -
+                    </Button>
+                    <Button
+                        Command="{Binding AddParenthesisCommand}"
+                        Grid.Column="3"
+                        Grid.Row="3">
+                        ( )
+                    </Button>
+                    <Button
+                        Command="{Binding PickResultCommand}"
+                        Grid.Column="4"
+                        Grid.Row="3">
+                        =
+                    </Button>
+                </Grid>
+            </Grid>
+        </Panel>
+
+        <Panel Classes="splashContent">
+            <Panel Background="Black" />
+            <Image Source="{StaticResource Avalonia}" MinWidth="24" MinHeight="24" MaxHeight="128" MaxWidth="128">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Panel>
+    </Panel>
 </UserControl>

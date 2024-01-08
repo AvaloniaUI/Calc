@@ -7,6 +7,6 @@
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
         <PackageReference Include="Material.Avalonia" Version="$(MaterialAvaloniaVersion)" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-        <PackageReference Include="Material.Icons.Avalonia" Version="2.1.0" />
+
     </ItemGroup>
 </Project>

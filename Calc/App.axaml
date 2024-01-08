@@ -2,13 +2,11 @@
     x:Class="Calc.App"
     xmlns="https://github.com/avaloniaui"
     xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:materialIcons="using:Material.Icons.Avalonia">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Application.Styles>
         <themes:MaterialTheme
             BaseTheme="Dark"
             PrimaryColor="DeepPurple"
             SecondaryColor="Lime" />
-        <materialIcons:MaterialIconStyles />
     </Application.Styles>
 </Application>
