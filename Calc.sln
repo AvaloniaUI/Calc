@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFi
 		global.json = global.json
 		Directory.Build.props = Directory.Build.props
 		nuget.config = nuget.config
+		.github\workflows\azure-swa.yml = .github\workflows\azure-swa.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc.Browser", "Calc.Browser\Calc.Browser.csproj", "{45063CD8-19B9-4241-9C02-2CD904BED0FC}"

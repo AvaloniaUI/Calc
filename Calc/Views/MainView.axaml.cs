@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Calc.ViewModels;
 
@@ -14,10 +15,9 @@ public partial class MainView : UserControl
         Focusable = true;
     }
 
-    protected override void OnLoaded()
+    protected override void OnLoaded(RoutedEventArgs e)
     {
-        base.OnLoaded();
-        
+        base.OnLoaded(e);
         Focus();
     }
 

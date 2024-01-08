@@ -5,8 +5,6 @@
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              xmlns:viewModels="clr-namespace:Calc.ViewModels"
              xmlns:m="using:Calc.Models"
-             xmlns:assists="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-             xmlns:naming="clr-namespace:Material.Styles.Resources.Naming;assembly=Material.Styles"
              mc:Ignorable="d" 
              x:Class="Calc.Views.MainView"
              x:DataType="viewModels:MainWindowViewModel"

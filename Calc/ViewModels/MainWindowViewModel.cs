@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
-using System.Reactive;
 using System.Windows.Input;
 using Calc.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -53,9 +52,9 @@ namespace Calc.ViewModels
             Calculate(ShownString);
         }
 
-        internal void ProcessText(string text)
+        internal void ProcessText(string? text)
         {
-            if (text.Length == 1)
+            if (text?.Length == 1)
             {
                 switch (text)
                 {
